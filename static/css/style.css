@@ -85,3 +85,18 @@ header h2 {
 .col-md-4 {
   margin-bottom: 1em;
 }
+
+/* CSS Grid */
+
+.grid-container {
+  display: grid;
+  grid-gap:5px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 10px;
+  height: 100%;
+}
+
+.grid-item {
+  text-align: center;
+  padding-top: 55%;
+}
