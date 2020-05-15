@@ -67,12 +67,21 @@ export default class SFU extends EventEmitter {
         console.log("SFU::attachMedia");
         const self = this;
         const video = this.config.localVideoEl;
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: {
+                width: { max: 640 },
+                height: { max: 480 }
+            }
+        })
             .then(function (stream) {
                 video.srcObject = stream;
                 video.autoplay = true;
                 video.playinline = true;
                 video.muted = true;
+                video.width = 200;
+                video.height = 200;
+                video.controls = true;
                 self.emit("localStream");
             })
             .catch(function (error) {
@@ -91,6 +100,9 @@ export default class SFU extends EventEmitter {
             video.setAttribute("data-peer-id", consumer._appData.peerId);
             video.setAttribute("data-search-id", consumer._id);
             video.playsInline = true;
+            video.width = 200;
+            video.height = 200;
+            video.controls = true;
             video.play();
             return video;
         } else {
