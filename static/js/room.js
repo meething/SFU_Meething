@@ -41,7 +41,7 @@ export default class Room extends EventEmitter {
         console.warn("room.sendVideo()");
         const videoProducer = await this.sendTransport.produce({
             track: track,
-            encodings: [{maxBitrate: 50000}]
+            encodings: [{maxBitrate: 90000}]
         });
         videoProducer.on("trackended", async () => {
             console.warn("producer.close() by trackended");
@@ -139,7 +139,7 @@ export default class Room extends EventEmitter {
             [{ "urls": ["stun:turn.hepic.tel"] },
             { "urls": ["stun:stun.l.google.com:19302"] },
             {
-                "urls": ["turn:turn.hepic.tel", "turns:turn.hepic.tel?transport=tcp"],
+                "urls": ["turn:turn.hepic.tel", "turns:turn.hepic.tel"],
                 "username": "meething",
                 "credential": "b0756813573c0e7f95b2ef667c75ace3",
                 "credentialType": "password"
