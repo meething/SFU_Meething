@@ -91,14 +91,13 @@ export default class Room extends EventEmitter {
             .catch(console.error);
 
         const iceServers =
-            [{ "urls": ["stun:turn.hepic.tel"] },
-            { "urls": ["stun:stun.l.google.com:19302"] },
-            {
-                "urls": ["turn:turn.hepic.tel"],
+            [{ "urls": ["stun:stun.l.google.com:19302"] },
+             {
+                "urls": ["turn:turn.hepic.tel", "turns:turn.hepic.tel"],
                 "username": "meething",
                 "credential": "b0756813573c0e7f95b2ef667c75ace3",
                 "credentialType": "password"
-            }
+             }
             ]
 
         transportInfo.iceServers = iceServers;
@@ -145,14 +144,13 @@ export default class Room extends EventEmitter {
             .catch(console.error);
 
         const iceServers =
-            [{ "urls": ["stun:turn.hepic.tel"] },
-            { "urls": ["stun:stun.l.google.com:19302"] },
-            {
+            [{ "urls": ["stun:stun.l.google.com:19302"] },
+             {
                 "urls": ["turn:turn.hepic.tel", "turns:turn.hepic.tel"],
                 "username": "meething",
                 "credential": "b0756813573c0e7f95b2ef667c75ace3",
                 "credentialType": "password"
-            }
+             }
             ]
 
         transportInfo.iceServers = iceServers;
