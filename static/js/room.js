@@ -40,7 +40,8 @@ export default class Room extends EventEmitter {
     async sendVideo(track) {
         console.warn("room.sendVideo()");
         const videoProducer = await this.sendTransport.produce({
-            track
+            track: track,
+            encodings: [{maxBitrate: 50000}]
         });
         videoProducer.on("trackended", async () => {
             console.warn("producer.close() by trackended");
