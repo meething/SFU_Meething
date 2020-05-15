@@ -90,14 +90,7 @@ export default class Room extends EventEmitter {
             .catch(console.error);
 
         const iceServers =
-            [{ "urls": ["stun:stun.l.google.com:19302"] },
-             {
-                "urls": ["turn:turn.hepic.tel", "turns:turn.hepic.tel"],
-                "username": "meething",
-                "credential": "b0756813573c0e7f95b2ef667c75ace3",
-                "credentialType": "password"
-             }
-            ]
+            [{ "urls": ["stun:stun.l.google.com:19302"] }];
 
         transportInfo.iceServers = iceServers;
         this.sendTransport = device.createSendTransport(transportInfo);
