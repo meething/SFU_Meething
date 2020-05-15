@@ -116,7 +116,7 @@ export default class Video {
         // only get two videos per row.
         var remoteVideos = document.getElementById("remotes").getElementsByTagName("video").length;
 
-        if (!(remoteVideos % 2)) {
+        if (!(remoteVideos % 3)) {
           var spacer = document.createElement("div");
           spacer.className = "w-100";
           remotes.appendChild(spacer);
