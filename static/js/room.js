@@ -28,7 +28,7 @@ export default class Room extends EventEmitter {
     async sendAudio(track) {
         console.warn("room.sendAudio()");
         const audioProducer = await this.sendTransport.produce({
-            track
+            track: track
         });
         audioProducer.on("trackended", async () => {
             console.warn("producer.close() by trackended");
@@ -41,7 +41,16 @@ export default class Room extends EventEmitter {
         console.warn("room.sendVideo()");
         const videoProducer = await this.sendTransport.produce({
             track: track,
-            encodings: [{maxBitrate: 90000}]
+            encodings   :
+            [
+              { maxBitrate:  90000 },
+              { maxBitrate: 150000 },
+              { maxBitrate: 300000 }
+            ],
+            codecOptions :
+            {
+              videoGoogleStartBitrate : 1000
+            }
         });
         videoProducer.on("trackended", async () => {
             console.warn("producer.close() by trackended");
