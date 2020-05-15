@@ -101,3 +101,7 @@ header h2 {
   text-align: center;
   padding-top: 55%;
 }
+
+.container {
+  min-width: 90%;
+}
