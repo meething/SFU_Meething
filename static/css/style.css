@@ -58,7 +58,8 @@ header h2 {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  border: 5px double #f2f2f2;
+  border: 5px double #ce4fa1b3;
+  background: #00000094;
 }
 
 .volume {
