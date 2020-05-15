@@ -44,8 +44,7 @@ export default class Room extends EventEmitter {
             encodings   :
             [
               { maxBitrate:  90000 },
-              { maxBitrate: 150000 },
-              { maxBitrate: 300000 }
+              { maxBitrate: 150000 }
             ],
             codecOptions :
             {
