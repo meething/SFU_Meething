@@ -82,7 +82,7 @@ export default class Video {
 
       if (remotes) {
         var outerContainer = document.createElement("div");
-        outerContainer.className = "col-md-6";
+        outerContainer.className = "col-md-4";
 
         var container = document.createElement("div");
         container.className = "videoContainer";
