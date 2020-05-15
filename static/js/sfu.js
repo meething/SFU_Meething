@@ -70,8 +70,14 @@ export default class SFU extends EventEmitter {
         navigator.mediaDevices.getUserMedia({
             audio: true,
             video: {
-                width: { max: 640 },
-                height: { max: 480 }
+                frameRate: {
+                   max: 15
+                },
+                height: {
+                    ideal: 720,
+                    max: 720,
+                    min: 240
+                }
             }
         })
             .then(function (stream) {
